@@ -22,11 +22,11 @@ class BankingRepository(
                 id = payment.id,
                 type = ActivityType.PAYMENT,
                 amount = payment.iznos,
-                date = payment.vremeTransakcije,
+                date = payment.vremeTransakcije ?: "",
                 status = payment.status,
-                senderAccount = accountLookup[payment.racunPosiljaocaId.toLongOrNull()]?.brojRacuna
-                    ?: "Račun ID ${payment.racunPosiljaocaId}",
-                receiverAccount = payment.racunPrimaocaBroj,
+                senderAccount = accountLookup[payment.racunPosiljaocaId?.toLongOrNull()]?.brojRacuna
+                    ?: "Račun ID ${payment.racunPosiljaocaId ?: "N/A"}",
+                receiverAccount = payment.racunPrimaocaBroj ?: "N/A",
                 purpose = payment.svrha,
             )
         }
@@ -36,12 +36,12 @@ class BankingRepository(
                 id = transfer.id,
                 type = ActivityType.TRANSFER,
                 amount = transfer.iznos,
-                date = transfer.vremeTransakcije,
+                date = transfer.vremeTransakcije ?: "",
                 status = transfer.status,
-                senderAccount = accountLookup[transfer.racunPosiljaocaId.toLongOrNull()]?.brojRacuna
-                    ?: "Račun ID ${transfer.racunPosiljaocaId}",
-                receiverAccount = accountLookup[transfer.racunPrimaocaId.toLongOrNull()]?.brojRacuna
-                    ?: "Račun ID ${transfer.racunPrimaocaId}",
+                senderAccount = accountLookup[transfer.racunPosiljaocaId?.toLongOrNull()]?.brojRacuna
+                    ?: "Račun ID ${transfer.racunPosiljaocaId ?: "N/A"}",
+                receiverAccount = accountLookup[transfer.racunPrimaocaId?.toLongOrNull()]?.brojRacuna
+                    ?: "Račun ID ${transfer.racunPrimaocaId ?: "N/A"}",
                 purpose = transfer.svrha,
             )
         }
@@ -58,11 +58,11 @@ class BankingRepository(
                 id = payment.id,
                 type = ActivityType.PAYMENT,
                 amount = payment.iznos,
-                date = payment.vremeTransakcije,
+                date = payment.vremeTransakcije ?: "",
                 status = payment.status,
-                senderAccount = accountLookup[payment.racunPosiljaocaId.toLongOrNull()]?.brojRacuna
-                    ?: "Račun ID ${payment.racunPosiljaocaId}",
-                receiverAccount = payment.racunPrimaocaBroj,
+                senderAccount = accountLookup[payment.racunPosiljaocaId?.toLongOrNull()]?.brojRacuna
+                    ?: "Račun ID ${payment.racunPosiljaocaId ?: "N/A"}",
+                receiverAccount = payment.racunPrimaocaBroj ?: "N/A",
                 purpose = payment.svrha,
             )
         }
@@ -72,12 +72,12 @@ class BankingRepository(
                 id = transfer.id,
                 type = ActivityType.TRANSFER,
                 amount = transfer.iznos,
-                date = transfer.vremeTransakcije,
+                date = transfer.vremeTransakcije ?: "",
                 status = transfer.status,
-                senderAccount = accountLookup[transfer.racunPosiljaocaId.toLongOrNull()]?.brojRacuna
-                    ?: "Račun ID ${transfer.racunPosiljaocaId}",
-                receiverAccount = accountLookup[transfer.racunPrimaocaId.toLongOrNull()]?.brojRacuna
-                    ?: "Račun ID ${transfer.racunPrimaocaId}",
+                senderAccount = accountLookup[transfer.racunPosiljaocaId?.toLongOrNull()]?.brojRacuna
+                    ?: "Račun ID ${transfer.racunPosiljaocaId ?: "N/A"}",
+                receiverAccount = accountLookup[transfer.racunPrimaocaId?.toLongOrNull()]?.brojRacuna
+                    ?: "Račun ID ${transfer.racunPrimaocaId ?: "N/A"}",
                 purpose = transfer.svrha,
             )
         }

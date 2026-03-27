@@ -39,14 +39,14 @@ data class PaymentsResponse(
 
 data class PaymentDto(
     @SerializedName("id") val id: String,
-    @SerializedName("racunPosiljaocaId") val racunPosiljaocaId: String,
-    @SerializedName("racunPrimaocaBroj") val racunPrimaocaBroj: String,
+    @SerializedName("racunPosiljaocaId") val racunPosiljaocaId: String? = null,
+    @SerializedName("racunPrimaocaBroj") val racunPrimaocaBroj: String? = null,
     @SerializedName("iznos") val iznos: Double,
     @SerializedName("sifraPlacanja") val sifraPlacanja: String,
     @SerializedName("pozivNaBroj") val pozivNaBroj: String,
     @SerializedName("svrha") val svrha: String,
     @SerializedName("status") val status: String,
-    @SerializedName("vremeTransakcije") val vremeTransakcije: String,
+    @SerializedName("vremeTransakcije") val vremeTransakcije: String? = null,
 )
 
 data class TransfersResponse(
@@ -55,15 +55,15 @@ data class TransfersResponse(
 
 data class TransferDto(
     @SerializedName("id") val id: String,
-    @SerializedName("racun_posiljaoca_id") val racunPosiljaocaId: String,
-    @SerializedName("racun_primaoca_id") val racunPrimaocaId: String,
+    @SerializedName("racun_posiljaoca_id") val racunPosiljaocaId: String? = null,
+    @SerializedName("racun_primaoca_id") val racunPrimaocaId: String? = null,
     @SerializedName("iznos") val iznos: Double,
     @SerializedName("valuta_iznosa") val valutaIznosa: String,
     @SerializedName("konvertovani_iznos") val konvertovaniIznos: Double,
     @SerializedName("kurs") val kurs: Double,
     @SerializedName("svrha") val svrha: String,
     @SerializedName("status") val status: String,
-    @SerializedName("vreme_transakcije") val vremeTransakcije: String,
+    @SerializedName("vreme_transakcije") val vremeTransakcije: String? = null,
 )
 
 data class MobileActionRequest(
